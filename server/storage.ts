@@ -35,7 +35,8 @@ export class MemStorage implements IStorage {
   async createTask(insertTask: InsertTask): Promise<Task> {
     const id = randomUUID();
     const task: Task = { 
-      ...insertTask, 
+      ...insertTask,
+      xpReward: insertTask.xpReward ?? 100,
       id, 
       createdAt: new Date()
     };
@@ -56,7 +57,8 @@ export class MemStorage implements IStorage {
   async createAchievement(insertAchievement: InsertAchievement): Promise<Achievement> {
     const id = randomUUID();
     const achievement: Achievement = { 
-      ...insertAchievement, 
+      ...insertAchievement,
+      icon: insertAchievement.icon ?? "🏆",
       id, 
       completedAt: new Date()
     };
