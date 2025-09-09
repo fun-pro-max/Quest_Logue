@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(25, 40%, 9%);
+  --foreground: hsl(45, 65%, 85%);
+  --card: hsl(180, 6.6667%, 97.0588%);
+  --card-foreground: hsl(210, 25%, 7.8431%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 25%, 7.8431%);
+  --primary: hsl(25, 45%, 30%);
+  --primary-foreground: hsl(45, 65%, 85%);
+  --secondary: hsl(45, 80%, 45%);
+  --secondary-foreground: hsl(25, 40%, 9%);
+  --muted: hsl(25, 35%, 20%);
+  --muted-foreground: hsl(45, 45%, 65%);
+  --accent: hsl(348, 80%, 47%);
+  --accent-foreground: hsl(45, 65%, 85%);
+  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(25, 45%, 25%);
+  --input: hsl(200, 23.0769%, 97.4510%);
+  --ring: hsl(202.8169, 89.1213%, 53.1373%);
+  --chart-1: hsl(203.8863, 88.2845%, 53.1373%);
+  --chart-2: hsl(159.7826, 100%, 36.0784%);
+  --chart-3: hsl(42.0290, 92.8251%, 56.2745%);
+  --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
+  --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
+  --sidebar: hsl(180, 6.6667%, 97.0588%);
+  --sidebar-foreground: hsl(210, 25%, 7.8431%);
+  --sidebar-primary: hsl(203.8863, 88.2845%, 53.1373%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(211.5789, 51.3514%, 92.7451%);
+  --sidebar-accent-foreground: hsl(203.8863, 88.2845%, 53.1373%);
+  --sidebar-border: hsl(205.0000, 25.0000%, 90.5882%);
+  --sidebar-ring: hsl(202.8169, 89.1213%, 53.1373%);
+  --font-sans: Roboto, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --font-medieval: Cinzel, serif;
+  --radius: 1.3rem;
+  --success: hsl(120, 60%, 34%);
+  --parchment: hsl(45, 65%, 85%);
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 1px 2px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 1px 2px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 2px 4px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 4px 6px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 8px 10px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(200, 6.6667%, 91.1765%);
+  --card: hsl(228, 9.8039%, 10%);
+  --card-foreground: hsl(0, 0%, 85.0980%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(200, 6.6667%, 91.1765%);
+  --primary: hsl(203.7736, 87.6033%, 52.5490%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(195.0000, 15.3846%, 94.9020%);
+  --secondary-foreground: hsl(210, 25%, 7.8431%);
+  --muted: hsl(0, 0%, 9.4118%);
+  --muted-foreground: hsl(210, 3.3898%, 46.2745%);
+  --accent: hsl(205.7143, 70%, 7.8431%);
+  --accent-foreground: hsl(203.7736, 87.6033%, 52.5490%);
+  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(210, 5.2632%, 14.9020%);
+  --input: hsl(207.6923, 27.6596%, 18.4314%);
+  --ring: hsl(202.8169, 89.1213%, 53.1373%);
+  --chart-1: hsl(203.8863, 88.2845%, 53.1373%);
+  --chart-2: hsl(159.7826, 100%, 36.0784%);
+  --chart-3: hsl(42.0290, 92.8251%, 56.2745%);
+  --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
+  --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
+  --sidebar: hsl(228, 9.8039%, 10%);
+  --sidebar-foreground: hsl(0, 0%, 85.0980%);
+  --sidebar-primary: hsl(202.8169, 89.1213%, 53.1373%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(205.7143, 70%, 7.8431%);
+  --sidebar-accent-foreground: hsl(203.7736, 87.6033%, 52.5490%);
+  --sidebar-border: hsl(205.7143, 15.7895%, 26.0784%);
+  --sidebar-ring: hsl(202.8169, 89.1213%, 53.1373%);
+  --font-sans: Roboto, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --font-medieval: Cinzel, serif;
+  --radius: 1.3rem;
+  --success: hsl(120, 60%, 34%);
+  --parchment: hsl(45, 65%, 85%);
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 1px 2px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 1px 2px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 2px 4px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 4px 6px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 8px 10px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background: linear-gradient(135deg, #2F1B14 0%, #1a0f0a 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--parchment);
+  }
+}
+
+@layer components {
+  .parchment-card {
+    background: linear-gradient(145deg, #f4e6d0 0%, #e8d5b7 100%);
+    border: 3px solid #8B4513;
+    box-shadow: 
+      inset 0 1px 3px rgba(139, 69, 19, 0.3),
+      0 8px 25px rgba(0, 0, 0, 0.4),
+      0 2px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .parchment-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #DAA520, #B8860B, #DAA520);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .ornate-border {
+    border-image: linear-gradient(45deg, #DAA520, #8B4513, #DAA520) 1;
+    border-width: 3px;
+    border-style: solid;
+  }
+
+  .achievement-badge {
+    background: radial-gradient(circle, #DAA520 0%, #B8860B 70%);
+    border: 2px solid #8B4513;
+    box-shadow: 
+      0 0 20px rgba(218, 165, 32, 0.5),
+      inset 0 1px 3px rgba(255, 255, 255, 0.3);
+  }
+
+  .boss-fight-card {
+    border-left: 6px solid #DC143C;
+    background: linear-gradient(135deg, #ffebee 0%, #f8bbd9 100%);
+  }
+
+  .quest-card {
+    border-left: 6px solid #DAA520;
+    background: linear-gradient(135deg, #fffbf0 0%, #f5e6a3 100%);
+  }
+
+  .training-card {
+    border-left: 6px solid #228B22;
+    background: linear-gradient(135deg, #f1f8e9 0%, #c8e6c9 100%);
+  }
+
+  .scroll-header {
+    background: linear-gradient(90deg, transparent 0%, #8B4513 20%, #8B4513 80%, transparent 100%);
+    position: relative;
+  }
+
+  .scroll-header::before,
+  .scroll-header::after {
+    content: '⚜';
+    color: #DAA520;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .scroll-header::before {
+    left: 1rem;
+  }
+
+  .scroll-header::after {
+    right: 1rem;
+  }
+
+  .btn-medieval {
+    background: linear-gradient(145deg, #8B4513 0%, #5d2e0c 100%);
+    border: 2px solid #DAA520;
+    color: #F5DEB3;
+    box-shadow: 
+      0 4px 15px rgba(0, 0, 0, 0.3),
+      inset 0 1px 2px rgba(218, 165, 32, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn-medieval:hover {
+    background: linear-gradient(145deg, #a0521a 0%, #6b3410 100%);
+    box-shadow: 
+      0 6px 20px rgba(0, 0, 0, 0.4),
+      inset 0 1px 3px rgba(218, 165, 32, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 12px 30px rgba(0, 0, 0, 0.4),
+      0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(218, 165, 32, 0.8);
+  }
+
+  .font-medieval {
+    font-family: var(--font-medieval);
+  }
+}
