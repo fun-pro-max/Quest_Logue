@@ -11,6 +11,7 @@ export interface IStorage {
   // Achievement operations
   getAchievements(): Promise<Achievement[]>;
   createAchievement(achievement: InsertAchievement): Promise<Achievement>;
+  deleteAchievement(id: string): Promise<boolean>;
 }
 
 export class MemStorage implements IStorage {
@@ -64,6 +65,10 @@ export class MemStorage implements IStorage {
     };
     this.achievements.set(id, achievement);
     return achievement;
+  }
+
+  async deleteAchievement(id: string): Promise<boolean> {
+    return this.achievements.delete(id);
   }
 }
 

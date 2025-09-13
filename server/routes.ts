@@ -80,6 +80,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Delete an achievement
+  app.delete("/api/achievements/:id", async (req, res) => {
+    try {
+      const deleted = await storage.deleteAchievement(req.params.id);
+      if (!deleted) {
+        return res.status(404).json({ message: "Achievement not found" });
+      }
+      res.json({ message: "Achievement deleted successfully" });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to delete achievement" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
