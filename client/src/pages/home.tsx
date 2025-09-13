@@ -43,6 +43,19 @@ export default function Home() {
     },
   });
 
+  const deleteAchievementMutation = useMutation({
+    mutationFn: async (id: string) => {
+      const response = await fetch(`/api/achievements/${id}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) throw new Error('Failed to delete achievement');
+      return response.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/achievements"] });
+    },
+  });
+
   const bossFights = tasks.filter(task => task.category === 'boss');
   const quests = tasks.filter(task => task.category === 'quest');
   const training = tasks.filter(task => task.category === 'training');
@@ -53,6 +66,10 @@ export default function Home() {
 
   const handleDelete = (id: string) => {
     deleteMutation.mutate(id);
+  };
+
+  const handleDeleteAchievement = (id: string) => {
+    deleteAchievementMutation.mutate(id);
   };
 
   if (tasksLoading || achievementsLoading) {
@@ -210,7 +227,11 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="achievements-gallery">
             {achievements.map((achievement) => (
-              <AchievementBadge key={achievement.id} achievement={achievement} />
+              <AchievementBadge 
+                key={achievement.id} 
+                achievement={achievement} 
+                onDelete={handleDeleteAchievement}
+              />
             ))}
             
             {achievements.length === 0 && (
