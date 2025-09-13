@@ -1,11 +1,12 @@
 import { Achievement } from "@shared/schema";
-import { Calendar, Star } from "lucide-react";
+import { Calendar, Star, XCircle } from "lucide-react";
 
 interface AchievementBadgeProps {
   achievement: Achievement;
+  onDelete: (id: string) => void;
 }
 
-export default function AchievementBadge({ achievement }: AchievementBadgeProps) {
+export default function AchievementBadge({ achievement, onDelete }: AchievementBadgeProps) {
   const formatDate = (date: Date) => {
     return new Date(date).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -15,7 +16,15 @@ export default function AchievementBadge({ achievement }: AchievementBadgeProps)
   };
 
   return (
-    <div className="achievement-badge rounded-lg p-6 text-center transition-all duration-300 hover:scale-105" data-testid={`achievement-${achievement.id}`}>
+    <div className="achievement-badge rounded-lg p-6 text-center transition-all duration-300 hover:scale-105 relative" data-testid={`achievement-${achievement.id}`}>
+      <button 
+        className="absolute top-2 right-2 text-accent hover:text-accent/80 text-lg transition-colors"
+        onClick={() => onDelete(achievement.id)}
+        title="Delete achievement"
+        data-testid={`button-delete-achievement-${achievement.id}`}
+      >
+        <XCircle className="h-5 w-5" />
+      </button>
       <div className="text-4xl mb-4">{achievement.icon}</div>
       <h3 className="font-medieval text-lg font-bold text-primary mb-2">
         {achievement.title}
