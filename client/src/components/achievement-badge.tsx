@@ -26,17 +26,17 @@ export default function AchievementBadge({ achievement, onDelete }: AchievementB
         <XCircle className="h-5 w-5" />
       </button>
       <div className="text-4xl mb-4">{achievement.icon}</div>
-      <h3 className="font-medieval text-lg font-bold text-primary mb-2">
+      <h3 className="font-medieval text-lg font-bold text-white mb-2">
         {achievement.title}
       </h3>
-      <p className="text-sm text-primary/80 mb-3">
+      <p className="text-sm text-white/90 mb-3">
         {achievement.description}
       </p>
-      <div className="text-xs text-primary/60 font-medieval">
+      <div className="text-xs text-white/80 font-medieval">
         <Calendar className="inline h-3 w-3 mr-1" />
         <span>Completed: {formatDate(achievement.completedAt)}</span>
       </div>
-      <div className="text-xs text-primary/60 font-medieval mt-1">
+      <div className="text-xs text-white/80 font-medieval mt-1">
         <Star className="inline h-3 w-3 mr-1" />
         <span>{achievement.xpEarned} XP Earned</span>
       </div>
